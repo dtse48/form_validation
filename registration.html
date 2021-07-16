@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="registration.js"></script>
+  <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="animations.html">Animations</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body onload = "Validation();">
+  <form action="registration.html" method="POST" id = "form">
+    <label for="firstName">First name: (Max. 50 characters)</label><br/>
+    <input id="firstName" type="text" name="firstName" /><br/>
+    <p id = "firstName_message"></p>
+    <label for="lastName">Last name:</label><br/>
+    <input id="lastName" type="text" name="lastName" /><br/>
+    <p id = "lastName_message"></p>
+    <hr/>
+    <label for="username">Username: (Max. 50 characters, Min. 6 characters)</label><br/>
+    <input id="username" type="text" name="username" /><br/>
+    <p id = "username_message"></p>
+    <label for="password">Password: (Must have 1 capital, 1 lowercase, 1 digit, and 1 special character. Max. 50 characters, Min. 8 characters)</label><br/>
+    <input id="password" type="password" name="password"  /><br/>
+    <label for="repeat_password">Repeat Password:</label><br/> 
+    <input id="repeat_password" type="password" name="repeat_password"  />
+    <p id = "password_message"></p>
+    <hr/>
+    <label for="city">City:</label><br/>
+    <input id="city" type="text" name="city" /><br/>
+    <p id = "city_message"></p>
+    <label for="state">State:</label><br/>
+    <select id = "state" style = "margin-bottom: 10px">
+      <option value="NA">select a state</option>
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District Of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </select>	
+    <p id = "state_message"></p>
+    <br/>
+    <label for="address_1">Address Line 1:</label><br/>
+    <input id="address_1" type="text" name="address_1" /><br/>
+    <p id = "address_1_message"></p>
+    <label for="address_2">Address Line 2:</label><br/>
+    <input id="address_2" type="text" name="address_2"/><br/>
+    <p id = "address_2_message"></p>
+    <label for="zip">Zip Code:</label><br/>
+    <input id="zip" type="text" name="zip"/><br/>
+    <p id = "zip_message"></p>
+    <hr/>
+    <label for="birthDay">Date of birth:</label><br/>
+    <input id="birthday" type="date" name="birthDay" /><br/>
+    <p id = "birthday_message"></p>
+    <hr/>
+    <label for="number">Phone Number: (no dashes, all 10 digits)</label><br/>
+    <input id="number" type="text" name="number" /><br/>
+    <p id = "number_message"></p>
+    <label for="email">Email:</label><br/>
+    <input id="email" type="text" name="email" placeholder="x@x.x"/><br/>
+    <p id = "email_message"></p>
+    <hr/>
+    <input type="radio" name="gender" id="maleGender"value="male" /> 
+    <label for="maleGender">Male</label><br/>
+    <input type="radio" 
+      name="gender" id="femaleGender"
+      value="female"/> <label for="femaleGender">Female</label><br/>
+    <input type="radio" 
+      name="gender" id="otherGender"
+      value="other"/> <label for="otherGender">Other</label>
+    <p id = gender_message></p>
+    <hr/>
+    <input type="radio" name="mar_status" id="single"value="single" /> 
+    <label for="mar_status">Single</label><br/>
+    <input type="radio" name="mar_status" id="married" value="married"/>
+    <label for="mar_status">Married</label><br/>
+    <p id = "marital_message"></p>
+    <hr/>
+    <input type="submit" value="Submit Data" style = "margin-bottom: 15px;" id = "submit" disabled = true onmouseover="submit_form();"/>
+    <p id = "submit_message"></p>
+    <input type="reset" value="Reset Data" style = "margin-bottom: 15px;"/>
+  </form>
+</body>
+<footer class="container-fluid text-center">
+  <a href = "https://www.youtube.com/user/NBA" target = "_blank" class = "footer_links">NBA on Youtube</a>
+    <a href = "https://www.instagram.com/nba/?hl=en" target = "_blank" class = "footer_links">NBA on Instagram</a>
+</footer>
+
+
+</body>
+</html>
