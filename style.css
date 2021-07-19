@@ -55,3 +55,8 @@ footer {
     margin-left: 15px;
     margin-top: 15px
 }
+
+.error {
+    color: red;
+    font-size: 11111;
+}
